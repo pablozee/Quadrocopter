@@ -33,7 +33,7 @@ public class DroneController : BaseRigidbody
 
         foreach(IEngine engine in engines)
         {
-            engine.UpdateEngine();
+            engine.UpdateEngine(rb, input);
         }
     }
 

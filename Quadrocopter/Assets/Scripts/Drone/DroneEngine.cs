@@ -12,8 +12,11 @@ public class DroneEngine : MonoBehaviour, IEngine
     {
     }
 
-    public void UpdateEngine()
+    public void UpdateEngine(Rigidbody rb, DroneInputs inputs)
     {
-        Debug.Log("Running engine " + gameObject.name);
+        Vector3 engineForce = Vector3.zero;
+        engineForce = transform.up * ((rb.mass * Physics.gravity.magnitude) + (inputs.Throttle * maxPower)) / 4f;
+
+        rb.AddForce(engineForce, ForceMode.Force);
     }
 }
