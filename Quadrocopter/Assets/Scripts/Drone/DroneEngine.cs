@@ -12,10 +12,25 @@ public class DroneEngine : MonoBehaviour, IEngine
     {
     }
 
-    public void UpdateEngine(Rigidbody rb, DroneInputs inputs)
+    public void UpdateEngine(Rigidbody rb, DroneInputs inputs, bool autoHover)
     {
+        float finalDiff; 
+
+        if (autoHover)
+        {
+            Vector3 upVec = transform.up;
+            upVec.x = 0f;
+            upVec.z = 0f;
+            float diff = 1 - upVec.magnitude;
+            finalDiff = Physics.gravity.magnitude * diff;
+        } 
+        else
+        {
+            finalDiff = 0f;
+        }
+
         Vector3 engineForce = Vector3.zero;
-        engineForce = transform.up * ((rb.mass * Physics.gravity.magnitude) + (inputs.Throttle * maxPower)) / 4f;
+        engineForce = transform.up * ((rb.mass * Physics.gravity.magnitude + finalDiff) + (inputs.Throttle * maxPower)) / 4f;
 
         rb.AddForce(engineForce, ForceMode.Force);
     }

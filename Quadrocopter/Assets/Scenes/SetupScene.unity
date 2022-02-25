@@ -234,6 +234,7 @@ MonoBehaviour:
   minMaxRoll: 30
   yawPower: 4
   lerpSpeed: 2
+  autoHover: 0
 --- !u!114 &361222274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +417,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465357261}
-  m_LocalRotation: {x: 0.34894946, y: 1e-45, z: -1e-45, w: 0.93714154}
+  m_LocalRotation: {x: 0.34894946, y: -3e-45, z: 1e-45, w: 0.93714154}
   m_LocalPosition: {x: 0, y: 2.7089999, z: -0.96598476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1197,7 +1198,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905148763}
-  m_LocalRotation: {x: 0.34894946, y: 1e-45, z: -1e-45, w: 0.93714154}
+  m_LocalRotation: {x: 0.34894946, y: -3e-45, z: 1e-45, w: 0.93714154}
   m_LocalPosition: {x: 0, y: 2.7089999, z: -0.96598476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

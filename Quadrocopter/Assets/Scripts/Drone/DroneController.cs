@@ -11,6 +11,7 @@ public class DroneController : BaseRigidbody
     [SerializeField] private float minMaxRoll = 30f;
     [SerializeField] private float yawPower = 4f;
     [SerializeField] private float lerpSpeed = 2f;
+    [SerializeField] private bool autoHover = false;
 
     private DroneInputs input;
     private List<IEngine> engines = new List<IEngine>();
@@ -38,7 +39,7 @@ public class DroneController : BaseRigidbody
 
         foreach(IEngine engine in engines)
         {
-            engine.UpdateEngine(rb, input);
+            engine.UpdateEngine(rb, input, autoHover);
         }
     }
 
